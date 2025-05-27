@@ -68,4 +68,4 @@ jobs:
         context: .
         push: true
         file: ./Dockerfile.dev
-        tags: ${{ vars.DOCKERHUB_USERNAME }}/python-crud-dev:latest
+        tags: ${{ vars.DOCKERHUB_USERNAME }}/python_app_dev:latest
