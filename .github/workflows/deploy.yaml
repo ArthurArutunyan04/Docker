@@ -50,5 +50,5 @@ jobs:
             podman pull ${{ vars.DOCKERHUB_USERNAME }}/python_app:latest
 
             # Run new container
-            podman run -d --name python-crud-prod --network host ${{ vars.DOCKERHUB_USERNAME }}/python_app:latest
+            podman run -d --name python_app:latest --network host ${{ vars.DOCKERHUB_USERNAME }}/python_app:latest
             echo "Container has been deployed successfully!"
