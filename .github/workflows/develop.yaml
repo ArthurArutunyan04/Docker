@@ -69,3 +69,15 @@ jobs:
         push: true
         file: ./Dockerfile.dev
         tags: ${{ vars.DOCKERHUB_USERNAME }}/python_app_dev:latest
+
+    - name: Push to master
+        if: success()
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git fetch origin master
+          git checkout master
+          git merge --ff-only dev
+          git push origin master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
